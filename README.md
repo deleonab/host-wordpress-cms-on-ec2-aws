@@ -34,6 +34,12 @@ http(Port 80) Allow All 0.0.0.0/0
 https(Port 443) Allow All 0.0.0.0/0
 
 ATTACH ELASTIC IP
-Instance public IP addresses change when the instance is stopped and relaunched. To avoid losing
+EC2 Instance's public IP addresses change when the instance is stopped and relaunched. To avoid losing
 the ip address to our application, we shall use an Elastic IP address and attach it to our EC2 Instance.
+
+
+ALLOCATE ELASTIC IP
+Attach it to our instance
+
+
 
