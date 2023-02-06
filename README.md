@@ -42,4 +42,37 @@ ALLOCATE ELASTIC IP
 Attach it to our instance
 
 
+OUR INSTANCE PUBLIC IP ADDRESS HAS NOW CHANGED TO THE ELASTIC IP ADDRESS
 
+
+
+WE SHALL NOW SSH INTO OUR INSTANCE
+Let's SSH into our instance using our new and persistent IP address
+
+
+```
+sudo apt update	
+```
+```
+sudo apt install apache2 -y
+```
+
+##### Let's check the status to see if Apache is up and running
+```
+~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-02-06 22:13:21 UTC; 1min 59s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 2424 (apache2)
+      Tasks: 55 (limit: 1143)
+     Memory: 4.9M
+        CPU: 34ms
+     CGroup: /system.slice/apache2.service
+             ├─2424 /usr/sbin/apache2 -k start
+             ├─2426 /usr/sbin/apache2 -k start
+             └─2427 /usr/sbin/apache2 -k start
+
+Feb 06 22:13:21 ip-172-31-59-209 systemd[1]: Starting The Apache HTTP Server...
+Feb 06 22:13:21 ip-172-31-59-209 systemd[1]: Started The Apache HTTP Server.
+```
