@@ -94,3 +94,36 @@ sudo apt install php libapache2-mod-php php-mysql
 ```
 sudo apt install mysql-server
 ```
+
+##### We need to change the MySql authentication to MySql native password
+This is necessary for Wordpress to be able to log in as an ordinary user.
+
+Lets log in to mysql as the root user
+
+```
+sudo mysql -u root
+```
+```
+ALTER USER 'root'@localhost IDENTIFIED with mysql_native_password BY 'secretpassordofyourchoice'
+Query OK, 0 rows affected (0.01 sec)
+```
+
+##### Now let's create a new mysql user
+
+```
+CREATE USER 'usertester'@localhost IDENTIFIED BY PASSWORD 'thenewuserpassword'
+```
+##### New mysql user created
+
+##### Next, we shall create a database for our Wordpress and grant permissions on it to our new user.
+```
+CREATE DATABASE databasenameofyourchoice;        ### wp_melrose       Olupero2023%melrose     'goldeneyepr'@localhost
+Query OK, 1 row affected (0.00 sec)
+```
+##### Grant all privileges on the database to the user
+```
+GRANT ALL PRIVILEGES ON databasenameofyourchoice.* TO 'usertester'@localhost;
+Query OK, 0 rows affected (0.00 sec)
+```
+##### Let's exit mysql using CTRL+D if on a windows pc.
+
