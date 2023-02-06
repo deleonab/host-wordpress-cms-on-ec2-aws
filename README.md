@@ -76,3 +76,21 @@ sudo apt install apache2 -y
 Feb 06 22:13:21 ip-172-31-59-209 systemd[1]: Starting The Apache HTTP Server...
 Feb 06 22:13:21 ip-172-31-59-209 systemd[1]: Started The Apache HTTP Server.
 ```
+
+##### visit the public IP address on our browser to see if Apache is successfully installed.
+##### Apache successfully installed.
+
+
+
+##### Our next task is to install PHP runtime which is required for wordpress which is built on PHP
+
+We shall  instal the php package, php-mysql (a PHP module that allows PHP to communicate with MySQL-based databases, as well as  libapache2-mod-php to enable Apache to handle PHP files. 
+```
+sudo apt update
+sudo apt install php libapache2-mod-php php-mysql
+```
+##### Next step is to instal MySql server
+
+```
+sudo apt install mysql-server
+```
