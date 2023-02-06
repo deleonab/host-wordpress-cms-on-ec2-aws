@@ -20,3 +20,20 @@ Install Wordpress
 Additional Tools
 - Github for version control and to document our actions
 - VSCode - Code/Text Editor
+
+LAUNCH EC2
+------
+We shall go to the AWS console and launch an Instance
+
+We shall name our instance InstanceNameOfChoice
+Select Ubuntu for our AMI (My Preference today)
+Instance type will be t2.micro
+Security groups ingress 
+SSH(Port 22) - Allow from your IP Adress only  xx.xx.xx.xx/32
+http(Port 80) Allow All 0.0.0.0/0 
+https(Port 443) Allow All 0.0.0.0/0
+
+ATTACH ELASTIC IP
+Instance public IP addresses change when the instance is stopped and relaunched. To avoid losing
+the ip address to our application, we shall use an Elastic IP address and attach it to our EC2 Instance.
+
