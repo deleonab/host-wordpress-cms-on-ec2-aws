@@ -175,5 +175,5 @@ http://ourelasticipaddress/wordpress
 
 ![Launch EC2](./images/wordpress-successful2.png)
 ![Launch EC2](./images/wordpress-successful3.png)
-![Launch EC2](./images/wordpress-successful3.png)
+![Launch EC2](./images/wordpress-successful4.png)
 ![Launch EC2](./images/wordpress-successful5.png)
