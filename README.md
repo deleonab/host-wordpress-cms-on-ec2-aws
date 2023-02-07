@@ -1,4 +1,4 @@
-###### HOSTING A WORDPRESS WEBSITE WITH AWS EC2 
+##### HOSTING A WORDPRESS WEBSITE WITH AWS EC2 
 
 Our goal is to host a website for xxxxxx solicitors on an Amazon EC2 Instance
 
@@ -21,7 +21,7 @@ Additional Tools
 - Github for version control and to document our actions
 - VSCode - Code/Text Editor
 
-LAUNCH EC2
+#### LAUNCH EC2
 ------
 We shall go to the AWS console and launch an Instance
 
@@ -34,7 +34,7 @@ http(Port 80) Allow All 0.0.0.0/0
 https(Port 443) Allow All 0.0.0.0/0
 ![Launch EC2](./images/launch-instance.png)
 
-ATTACH ELASTIC IP
+#### ATTACH ELASTIC IP
 EC2 Instance's public IP addresses change when the instance is stopped and relaunched. To avoid losing
 the ip address to our application, we shall use an Elastic IP address and attach it to our EC2 Instance.
 
@@ -58,7 +58,7 @@ Let's SSH into our instance using our new and persistent IP address
 sudo apt update	
 ```
 
-##### Instal Apache
+##### Install Apache
 ```
 sudo apt install apache2 -y
 ```
