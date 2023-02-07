@@ -32,15 +32,18 @@ Security groups ingress
 SSH(Port 22) - Allow from your IP Adress only  xx.xx.xx.xx/32
 http(Port 80) Allow All 0.0.0.0/0 
 https(Port 443) Allow All 0.0.0.0/0
+![Launch EC2](./images/launch-instance.png)
 
 ATTACH ELASTIC IP
 EC2 Instance's public IP addresses change when the instance is stopped and relaunched. To avoid losing
 the ip address to our application, we shall use an Elastic IP address and attach it to our EC2 Instance.
 
+![Launch EC2](./images/elastic-ip.png)
 
 ALLOCATE ELASTIC IP
 Attach it to our instance
 
+![Launch EC2](./images/associate-eip.png)
 
 OUR INSTANCE PUBLIC IP ADDRESS HAS NOW CHANGED TO THE ELASTIC IP ADDRESS
 
@@ -126,4 +129,37 @@ GRANT ALL PRIVILEGES ON databasenameofyourchoice.* TO 'usertester'@localhost;
 Query OK, 0 rows affected (0.00 sec)
 ```
 ##### Let's exit mysql using CTRL+D if on a windows pc.
+
+##### Let's first download wordpress to out tmp directory before copying to our var/www/html directory
+```
+cd \tmp
+```
+##### Download wordprss using wget
+```
+wget https://wordpress.org/latest.tar.gz
+```
+
+##### Extract the package using 
+```
+tar -xzvf latest.tar.gz
+```
+##### Wordpress is now dowloaded to our tmp folder
+
+##### To move wordpress to our root folder
+```
+sudo mv wordpress/ /var/www/html/
+```
+
+we can check out wordpress installation by going to ourelasticipaddress/wordpress in our browser
+```
+http://ourelasticipaddress/wordpress
+```
+
+##### Fill out the credentials for username, database name, db password 
+
+##### You will get an unable to write to wp_config.php error
+
+##### Create the wp_config.php file in the wordpress directory and copy and paste the generated code inside it
+
+##### Save and exit.
 
