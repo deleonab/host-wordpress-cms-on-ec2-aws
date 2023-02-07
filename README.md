@@ -32,6 +32,8 @@ We shall go to the AWS console and launch an Instance
 - SSH(Port 22) - Allow from your IP Adress only  xx.xx.xx.xx/32
 - http(Port 80) Allow All 0.0.0.0/0 
 - https(Port 443) Allow All 0.0.0.0/0
+
+
 ![Launch EC2](./images/launch-instance.png)
 
 #### ATTACH ELASTIC IP
