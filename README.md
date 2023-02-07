@@ -25,13 +25,13 @@ Additional Tools
 ------
 We shall go to the AWS console and launch an Instance
 
-We shall name our instance InstanceNameOfChoice
-Select Ubuntu for our AMI (My Preference today)
-Instance type will be t2.micro
-Security groups ingress 
-SSH(Port 22) - Allow from your IP Adress only  xx.xx.xx.xx/32
-http(Port 80) Allow All 0.0.0.0/0 
-https(Port 443) Allow All 0.0.0.0/0
+- We shall name our instance InstanceNameOfChoice
+- Select Ubuntu for our AMI (My Preference today)
+- Instance type will be t2.micro
+- Security groups ingress 
+- SSH(Port 22) - Allow from your IP Adress only  xx.xx.xx.xx/32
+- http(Port 80) Allow All 0.0.0.0/0 
+- https(Port 443) Allow All 0.0.0.0/0
 ![Launch EC2](./images/launch-instance.png)
 
 #### ATTACH ELASTIC IP
@@ -40,17 +40,17 @@ the ip address to our application, we shall use an Elastic IP address and attach
 
 ![Launch EC2](./images/elastic-ip.png)
 
-ALLOCATE ELASTIC IP
-Attach it to our instance
+#### ALLOCATE ELASTIC IP
+#### Attach it to our instance
 
 ![Launch EC2](./images/associate-eip.png)
 
-OUR INSTANCE PUBLIC IP ADDRESS HAS NOW CHANGED TO THE ELASTIC IP ADDRESS
+#### OUR INSTANCE PUBLIC IP ADDRESS HAS NOW CHANGED TO THE ELASTIC IP ADDRESS
 
 ![Launch EC2](./images/EIP-PUBLICIP.png)
 
-WE SHALL NOW SSH INTO OUR INSTANCE
-Let's SSH into our instance using our new and persistent IP address
+#### WE SHALL NOW SSH INTO OUR INSTANCE
+#### Let's SSH into our instance using our new and persistent IP address
 
 ![Launch EC2](./images/logged-into-instance.png)
 
