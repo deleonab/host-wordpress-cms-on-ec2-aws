@@ -47,15 +47,18 @@ Attach it to our instance
 
 OUR INSTANCE PUBLIC IP ADDRESS HAS NOW CHANGED TO THE ELASTIC IP ADDRESS
 
-
+![Launch EC2](./images/EIP-PUBLICIP.png)
 
 WE SHALL NOW SSH INTO OUR INSTANCE
 Let's SSH into our instance using our new and persistent IP address
 
+![Launch EC2](./images/logged-into-instance.png)
 
 ```
 sudo apt update	
 ```
+
+##### Instal Apache
 ```
 sudo apt install apache2 -y
 ```
@@ -83,7 +86,7 @@ Feb 06 22:13:21 ip-172-31-59-209 systemd[1]: Started The Apache HTTP Server.
 ##### visit the public IP address on our browser to see if Apache is successfully installed.
 ##### Apache successfully installed.
 
-
+![Launch EC2](./images/Apache-installed.png)
 
 ##### Our next task is to install PHP runtime which is required for wordpress which is built on PHP
 
@@ -92,6 +95,7 @@ We shall  instal the php package, php-mysql (a PHP module that allows PHP to com
 sudo apt update
 sudo apt install php libapache2-mod-php php-mysql
 ```
+
 ##### Next step is to instal MySql server
 
 ```
@@ -145,6 +149,8 @@ tar -xzvf latest.tar.gz
 ```
 ##### Wordpress is now dowloaded to our tmp folder
 
+![Launch EC2](./images/wordpress-downloaded-tmp.png)
+
 ##### To move wordpress to our root folder
 ```
 sudo mv wordpress/ /var/www/html/
@@ -154,6 +160,8 @@ we can check out wordpress installation by going to ourelasticipaddress/wordpres
 ```
 http://ourelasticipaddress/wordpress
 ```
+  
+![Launch EC2](./images/wordpress-successful1.png)
 
 ##### Fill out the credentials for username, database name, db password 
 
@@ -163,3 +171,7 @@ http://ourelasticipaddress/wordpress
 
 ##### Save and exit.
 
+![Launch EC2](./images/wordpress-successful2.png)
+![Launch EC2](./images/wordpress-successful3.png)
+![Launch EC2](./images/wordpress-successful3.png)
+![Launch EC2](./images/wordpress-successful5.png)
