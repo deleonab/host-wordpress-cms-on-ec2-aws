@@ -21,7 +21,7 @@ Additional Tools
 - Github for version control and to document our actions
 - VSCode - Code/Text Editor
 
-#### LAUNCH EC2
+#### 1. LAUNCH EC2 INSTANCE
 ------
 We shall go to the AWS console and launch an Instance
 
@@ -36,13 +36,13 @@ We shall go to the AWS console and launch an Instance
 
 ![Launch EC2](./images/launch-instance.png)
 
-#### ATTACH ELASTIC IP
+#### 2. ATTACH AN ELASTIC IP
 EC2 Instance's public IP addresses change when the instance is stopped and relaunched. To avoid losing
 the ip address to our application, we shall use an Elastic IP address and attach it to our EC2 Instance.
 
 ![Launch EC2](./images/elastic-ip.png)
 
-#### ALLOCATE ELASTIC IP
+#### 3. ASSOCIATE ELASTIC IP
 #### Attach it to our instance
 
 ![Launch EC2](./images/associate-eip.png)
@@ -51,7 +51,7 @@ the ip address to our application, we shall use an Elastic IP address and attach
 
 ![Launch EC2](./images/EIP-PUBLICIP.png)
 
-#### WE SHALL NOW SSH INTO OUR INSTANCE
+#### 4. WE SHALL NOW SSH INTO OUR INSTANCE
 #### Let's SSH into our instance using our new and persistent IP address
 
 ![Launch EC2](./images/logged-into-instance.png)
@@ -60,7 +60,7 @@ the ip address to our application, we shall use an Elastic IP address and attach
 sudo apt update	
 ```
 
-##### Install Apache
+##### 5. Install Apache
 ```
 sudo apt install apache2 -y
 ```
@@ -90,7 +90,7 @@ Feb 06 22:13:21 ip-172-31-59-209 systemd[1]: Started The Apache HTTP Server.
 
 ![Launch EC2](./images/Apache-installed.png)
 
-##### Our next task is to install PHP runtime which is required for wordpress which is built on PHP
+##### 6. Our next task is to install PHP runtime which is required for wordpress which is built on PHP
 
 We shall  instal the php package, php-mysql (a PHP module that allows PHP to communicate with MySQL-based databases, as well as  libapache2-mod-php to enable Apache to handle PHP files. 
 ```
@@ -98,13 +98,13 @@ sudo apt update
 sudo apt install php libapache2-mod-php php-mysql
 ```
 
-##### Next step is to instal MySql server
+##### 7. Next step is to install MySql server
 
 ```
 sudo apt install mysql-server
 ```
 
-##### We need to change the MySql authentication to MySql native password
+##### 8. We need to change the MySql authentication to MySql native password
 This is necessary for Wordpress to be able to log in as an ordinary user.
 
 Lets log in to mysql as the root user
@@ -117,19 +117,19 @@ ALTER USER 'root'@localhost IDENTIFIED with mysql_native_password BY 'secretpass
 Query OK, 0 rows affected (0.01 sec)
 ```
 
-##### Now let's create a new mysql user
+##### 9. Now let's create a new mysql user
 
 ```
 CREATE USER 'usertester'@localhost IDENTIFIED BY PASSWORD 'thenewuserpassword'
 ```
 ##### New mysql user created
 
-##### Next, we shall create a database for our Wordpress and grant permissions on it to our new user.
+##### 10. Next, we shall create a database for our Wordpress and grant permissions on it to our new user.
 ```
 CREATE DATABASE databasenameofyourchoice;        ### wp_melrose       Olupero2023%melrose     'goldeneyepr'@localhost
 Query OK, 1 row affected (0.00 sec)
 ```
-##### Grant all privileges on the database to the user
+##### G11. rant all privileges on the database to the user
 ```
 GRANT ALL PRIVILEGES ON databasenameofyourchoice.* TO 'usertester'@localhost;
 Query OK, 0 rows affected (0.00 sec)
@@ -140,12 +140,12 @@ Query OK, 0 rows affected (0.00 sec)
 ```
 cd \tmp
 ```
-##### Download wordprss using wget
+##### 12. Download wordprss using wget
 ```
 wget https://wordpress.org/latest.tar.gz
 ```
 
-##### Extract the package using 
+##### 13. Extract the package using 
 ```
 tar -xzvf latest.tar.gz
 ```
@@ -153,7 +153,7 @@ tar -xzvf latest.tar.gz
 
 ![Launch EC2](./images/wordpress-downloaded-tmp.png)
 
-##### To move wordpress to our root folder
+##### 14 . Move wordpress to our root folder
 ```
 sudo mv wordpress/ /var/www/html/
 ```
